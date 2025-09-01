@@ -1,4 +1,5 @@
 # 🤖 AI Generator Hub - Chatbot Generators Hub
+<div align="center">
 
 [![Next.js](https://img.shields.io/badge/Next.js-14.2.32-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-18.2.0-blue?style=for-the-badge&logo=react)](https://reactjs.org/)
@@ -6,8 +7,6 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0.0-blue?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
 [![OpenAI](https://img.shields.io/badge/OpenAI-GPT--4o--mini-412991?style=for-the-badge&logo=openai)](https://openai.com/)
 [![Vercel](https://img.shields.io/badge/Vercel-Deploy-black?style=for-the-badge&logo=vercel)](https://vercel.com/)
-
-<div align="center">
 
 ![AI Generator Hub](https://img.shields.io/badge/AI_Generator_Hub-Chatbot_Generators_Hub-blue?style=for-the-badge&logo=robot)
 ![Status](https://img.shields.io/badge/Status-Production_Ready-green?style=for-the-badge)

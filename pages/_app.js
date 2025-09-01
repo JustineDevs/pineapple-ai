@@ -2,6 +2,7 @@ import '../src/index.css'
 import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
 import Sidebar from '../src/components/Sidebar'
+import { Analytics } from '@vercel/analytics/react'
 
 function MyApp({ Component, pageProps }) {
   const [sidebarOpen, setSidebarOpen] = useState(false)
@@ -51,6 +52,7 @@ function MyApp({ Component, pageProps }) {
         <div className="lg:hidden h-16"></div> {/* Spacer for mobile menu button */}
         <Component {...pageProps} />
       </main>
+      <Analytics />
     </div>
   )
 }

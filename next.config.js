@@ -3,7 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ['localhost', 'pineapple-ai.vercel.app'],
+    domains: ['localhost'],
   },
   env: {
     CUSTOM_KEY: process.env.CUSTOM_KEY,

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { 
   TrendingUp, 
   Users, 
@@ -20,6 +21,7 @@ import {
 } from 'lucide-react';
 
 const Dashboard = () => {
+  const router = useRouter();
   const [currentTime, setCurrentTime] = useState(null);
   const [mounted, setMounted] = useState(false);
   const [showProjectMenu, setShowProjectMenu] = useState(null);
@@ -67,11 +69,11 @@ const Dashboard = () => {
   };
 
   const handleCreateProject = () => {
-    window.location.href = '/projects';
+    router.push('/projects');
   };
 
   const handleCreateTask = () => {
-    window.location.href = '/tasks';
+    router.push('/tasks');
   };
 
   const handleScheduleMeeting = () => {
@@ -83,25 +85,25 @@ const Dashboard = () => {
   };
 
   const handleViewAllProjects = () => {
-    window.location.href = '/projects';
+    router.push('/projects');
   };
 
   const handleViewAllDeadlines = () => {
-    window.location.href = '/tasks';
+    router.push('/tasks');
   };
 
   const handleViewAllTasks = () => {
-    window.location.href = '/tasks';
+    router.push('/tasks');
   };
 
   // Project actions
   const handleViewProject = (projectId) => {
-    window.location.href = `/projects?id=${projectId}`;
+    router.push(`/projects?id=${projectId}`);
     setShowProjectMenu(null);
   };
 
   const handleEditProject = (projectId) => {
-    window.location.href = `/projects?edit=${projectId}`;
+    router.push(`/projects?edit=${projectId}`);
     setShowProjectMenu(null);
   };
 
@@ -114,12 +116,12 @@ const Dashboard = () => {
 
   // Deadline actions
   const handleViewDeadline = (deadlineId) => {
-    window.location.href = `/tasks?id=${deadlineId}`;
+    router.push(`/tasks?id=${deadlineId}`);
     setShowDeadlineMenu(null);
   };
 
   const handleEditDeadline = (deadlineId) => {
-    window.location.href = `/tasks?edit=${deadlineId}`;
+    router.push(`/tasks?edit=${deadlineId}`);
     setShowDeadlineMenu(null);
   };
 

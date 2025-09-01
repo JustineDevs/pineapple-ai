@@ -1,13 +1,5 @@
 {
   "version": 2,
-  "functions": {
-    "pages/api/generate.js": {
-      "maxDuration": 30
-    },
-    "pages/api/generate-local.js": {
-      "maxDuration": 30
-    }
-  },
   "env": {
     "NODE_ENV": "production"
   }

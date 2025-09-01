@@ -1,16 +1,14 @@
 import '../src/index.css'
 import { useState, useEffect } from 'react'
-import { Menu, X } from 'lucide-react'
-import Sidebar from '../src/components/Sidebar'
 
 function MyApp({ Component, pageProps }) {
-  const [sidebarOpen, setSidebarOpen] = useState(false)
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
     setMounted(true)
   }, [])
 
+  // Simple test version to isolate the issue
   if (!mounted) {
     return (
       <div className="flex h-screen bg-gray-50 items-center justify-center">
@@ -23,34 +21,12 @@ function MyApp({ Component, pageProps }) {
   }
 
   return (
-    <div className="flex h-screen bg-gray-50">
-      {/* Mobile menu button */}
-      <div className="lg:hidden fixed top-4 left-4 z-50">
-        <button
-          onClick={() => setSidebarOpen(!sidebarOpen)}
-          className="bg-white p-2 rounded-lg shadow-md border border-gray-200 hover:bg-gray-50"
-        >
-          {sidebarOpen ? (
-            <X className="h-6 w-6 text-gray-600" />
-          ) : (
-            <Menu className="h-6 w-6 text-gray-600" />
-          )}
-        </button>
-      </div>
-
-      {/* Mobile overlay */}
-      {sidebarOpen && (
-        <div 
-          className="lg:hidden fixed inset-0 z-40 bg-black bg-opacity-50"
-          onClick={() => setSidebarOpen(false)}
-        />
-      )}
-
-      <Sidebar isOpen={sidebarOpen} setIsOpen={setSidebarOpen} />
-      <main className="flex-1 overflow-auto lg:ml-0">
-        <div className="lg:hidden h-16"></div> {/* Spacer for mobile menu button */}
+    <div className="min-h-screen bg-gray-50">
+      <div className="p-8">
+        <h1 className="text-3xl font-bold text-gray-900 mb-4">Pineapple AI</h1>
+        <p className="text-gray-600 mb-8">Test Page - If you can see this, the app is working!</p>
         <Component {...pageProps} />
-      </main>
+      </div>
     </div>
   )
 }

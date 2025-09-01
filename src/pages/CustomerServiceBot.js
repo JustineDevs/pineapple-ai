@@ -122,11 +122,13 @@ const CustomerServiceBot = () => {
   }
 
   const copyToClipboard = async (text) => {
-    try {
-      await navigator.clipboard.writeText(text)
-      // You could add a toast notification here
-    } catch (err) {
-      console.error('Failed to copy:', err)
+    if (typeof window !== 'undefined' && navigator.clipboard) {
+      try {
+        await navigator.clipboard.writeText(text)
+        // You could add a toast notification here
+      } catch (err) {
+        console.error('Failed to copy:', err)
+      }
     }
   }
 
@@ -148,14 +150,14 @@ const CustomerServiceBot = () => {
         await navigator.share({
           title: 'Customer Service Response',
           text: response.text,
-          url: window.location.href
+          url: typeof window !== 'undefined' ? window.location.href : ''
         })
       } catch (err) {
         console.error('Share failed:', err)
       }
     } else {
       // Fallback to copying URL
-      copyToClipboard(window.location.href)
+      copyToClipboard(typeof window !== 'undefined' ? window.location.href : '')
     }
   }
 

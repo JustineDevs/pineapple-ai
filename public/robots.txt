@@ -1,0 +1,28 @@
+User-agent: *
+Allow: /
+
+# Disallow admin and private areas
+Disallow: /admin/
+Disallow: /api/
+Disallow: /private/
+Disallow: /temp/
+Disallow: /logs/
+
+# Allow important generator pages
+Allow: /generator-hub/
+Allow: /generators/
+Allow: /category/
+Allow: /industry/
+Allow: /use-cases/
+Allow: /resources/
+
+# Crawl delay for better server performance
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://aigeneratorhub.com/sitemap.xml
+
+# Additional sitemaps for better organization
+Sitemap: https://aigeneratorhub.com/sitemap-generators.xml
+Sitemap: https://aigeneratorhub.com/sitemap-categories.xml
+Sitemap: https://aigeneratorhub.com/sitemap-industries.xml

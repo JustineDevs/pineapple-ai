@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { ArrowLeft, Copy, Download, Share2, RefreshCw, Loader2, CheckCircle, AlertCircle } from 'lucide-react'
 import Link from 'next/link'
+import { generateContent } from '../utils/apiClient'
 
 const CustomerServiceBot = () => {
   const [formData, setFormData] = useState({
@@ -16,7 +17,7 @@ const CustomerServiceBot = () => {
   const [generatedResponses, setGeneratedResponses] = useState([])
   const [isGenerating, setIsGenerating] = useState(false)
   const [error, setError] = useState(null)
-  const [useLocalLLM, setUseLocalLLM] = useState(false)
+
 
   const handleInputChange = (e) => {
     const { name, value } = e.target
@@ -31,25 +32,13 @@ const CustomerServiceBot = () => {
     setError(null)
     
     try {
-      const apiEndpoint = useLocalLLM ? '/api/generate-local' : '/api/generate'
-      
-      const response = await fetch(apiEndpoint, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          prompt: 'Generate a professional customer service response',
+      const result = await generateContent(
+        'Generate a professional customer service response',
+        {
           generatorType: 'customer-service',
           ...formData
-        })
-      })
-
-      const result = await response.json()
-
-      if (!response.ok) {
-        throw new Error(result.error || 'Failed to generate response')
-      }
+        }
+      )
 
       if (result.success) {
         const newResponse = {

@@ -136,6 +136,10 @@ Include: Inline comments explaining key steps
 
 ### Vercel Deployment (Recommended)
 
+✅ **Successfully Deployed!** 
+
+**Live URL**: https://pineapple-ai.vercel.app/
+
 1. **Push to GitHub**
    ```bash
    git add .
@@ -144,9 +148,21 @@ Include: Inline comments explaining key steps
    ```
 
 2. **Deploy with Vercel**
+   ```bash
+   vercel --prod
+   ```
    - Connect your GitHub repo to Vercel
    - Set environment variables in Vercel dashboard
    - Deploy automatically on every push
+
+### Environment Variables Required
+
+Set these in your Vercel dashboard:
+
+- `OPENAI_API_KEY` - Your OpenAI API key
+- `LOCAL_LLM_API_URL` - (Optional) Local LLM endpoint
+- `LOCAL_LLM_API_KEY` - (Optional) Local LLM API key
+- `LOCAL_LLM_MODEL` - (Optional) Local LLM model name
 
 ## 🧪 Testing & Quality Assurance
 

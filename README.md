@@ -75,8 +75,22 @@ A modern, AI-powered platform for generating professional customer service respo
 ## 🧪 Example Prompts for Demo
 
 ### 1. Customer Service Bot
-**Complete Form Example:**
+**Form Fields with Example Data:**
+
+| Field | Example Value |
+|-------|---------------|
+| **Business Type** | `E-commerce` |
+| **Industry** | `Online Retail` |
+| **Tone** | `Professional` |
+| **Language** | `English` |
+| **Response Length** | `Medium` |
+| **Specific Scenario** | `Order delivery issue` |
+| **Customer Query** | `"My order #12345 hasn't arrived after 2 weeks. I need it urgently for an event this weekend. Can you help me track it or arrange expedited shipping?"` |
+
+**Complete Prompt Generated:**
 ```
+Generate a professional customer service response
+
 Business Type: E-commerce
 Industry: Online Retail
 Tone: Professional
@@ -86,79 +100,97 @@ Specific Scenario: Order delivery issue
 Customer Query: "My order #12345 hasn't arrived after 2 weeks. I need it urgently for an event this weekend. Can you help me track it or arrange expedited shipping?"
 ```
 
-**Expected Output:** Professional response addressing the customer's concern, offering tracking assistance, and providing solutions for expedited delivery.
-
 ---
 
 ### 2. Sales Assistant Bot
-**Complete Form Example:**
-```
-Product: AI-powered CRM platform
-Customer Profile: SMB e-commerce operations manager
-Key Objection: Concerned about migration complexity and hidden costs
-Tone: Friendly
-Language: English
-Response Length: Medium
-```
+**Form Fields with Example Data:**
 
-**Expected Output:** Persuasive response addressing migration concerns, highlighting ease of setup, transparent pricing, and offering a free trial or demo.
+| Field | Example Value |
+|-------|---------------|
+| **Product** | `AI-powered CRM platform` |
+| **Customer Profile** | `SMB e-commerce operations manager` |
+| **Key Objection** | `Concerned about migration complexity and hidden costs` |
+| **Tone** | `Friendly` |
+| **Language** | `English` |
+| **Response Length** | `Medium` |
+
+**Complete Prompt Generated:**
+```
+Act as a SaaS sales assistant. Craft a Medium response in English using a Friendly tone. Product: AI-powered CRM platform. Customer profile: SMB e-commerce operations manager. Handle objection: Concerned about migration complexity and hidden costs. Include one probing question and one CTA to schedule a demo.
+```
 
 ---
 
 ### 3. Blog Content Writer
-**Complete Form Example:**
-```
-Topic: "10 Ways to Improve Customer Retention in 2024"
-Audience: SaaS startup founders and marketing managers
-Tone: Professional
-Language: English
-Outline: Introduction, 10 actionable strategies with examples, implementation tips, conclusion with next steps
-Length: Medium
-```
+**Form Fields with Example Data:**
 
-**Expected Output:** Well-structured blog post with engaging introduction, 10 detailed retention strategies, practical examples, and actionable conclusion.
+| Field | Example Value |
+|-------|---------------|
+| **Topic** | `"10 Ways to Improve Customer Retention in 2024"` |
+| **Audience** | `SaaS startup founders and marketing managers` |
+| **Tone** | `Professional` |
+| **Language** | `English` |
+| **Outline** | `Introduction, 10 actionable strategies with examples, implementation tips, conclusion with next steps` |
+| **Length** | `Medium` |
+
+**Complete Prompt Generated:**
+```
+Write a blog post about "10 Ways to Improve Customer Retention in 2024" for an audience of SaaS startup founders and marketing managers. Use a Professional tone in English. Target length: Medium. Follow this outline: Introduction, 10 actionable strategies with examples, implementation tips, conclusion with next steps
+```
 
 ---
 
 ### 4. Email Campaign Generator
-**Complete Form Example:**
-```
-Campaign Type: Promotional
-Goal: Drive sign-ups for free trial
-Audience: Small business owners interested in productivity tools
-Product: AI-powered project management software
-Tone: Friendly
-Language: English
-```
+**Form Fields with Example Data:**
 
-**Expected Output:** Compelling email with attention-grabbing subject line, engaging body content highlighting benefits, clear call-to-action, and urgency elements.
+| Field | Example Value |
+|-------|---------------|
+| **Campaign Type** | `Promotional` |
+| **Goal** | `Drive sign-ups for free trial` |
+| **Audience** | `Small business owners interested in productivity tools` |
+| **Product** | `AI-powered project management software` |
+| **Tone** | `Friendly` |
+| **Language** | `English` |
+
+**Complete Prompt Generated:**
+```
+Write a Promotional email in English with a Friendly tone. Goal: Drive sign-ups for free trial. Audience: Small business owners interested in productivity tools. Product/Offer: AI-powered project management software. Include a compelling subject line and a clear CTA button copy.
+```
 
 ---
 
 ### 5. Logo Design Generator
-**Complete Form Example:**
-```
-Brand: TechFlow Solutions
-Tagline: "Streamline Your Workflow"
-Values: Innovation, efficiency, reliability, user-friendly
-Style: Modern
-Colors: Blue (#3B82F6) and white with accent orange (#F97316)
-Usage: Web and App
-```
+**Form Fields with Example Data:**
 
-**Expected Output:** Comprehensive design brief with 3 concept directions, typography suggestions, color palette with hex codes, usage guidelines, and negative space ideas.
+| Field | Example Value |
+|-------|---------------|
+| **Brand** | `TechFlow Solutions` |
+| **Tagline** | `"Streamline Your Workflow"` |
+| **Values** | `Innovation, efficiency, reliability, user-friendly` |
+| **Style** | `Modern` |
+| **Colors** | `Blue (#3B82F6) and white with accent orange (#F97316)` |
+| **Usage** | `Web and App` |
+
+**Complete Prompt Generated:**
+```
+Create a professional logo design brief. Brand: TechFlow Solutions. Tagline: "Streamline Your Workflow". Core values: Innovation, efficiency, reliability, user-friendly. Preferred style: Modern. Color preferences: Blue (#3B82F6) and white with accent orange (#F97316). Primary usage: Web and App. Include: concept directions (3), typography suggestions, color palette (hex), usage notes, and negative space/monogram ideas.
+```
 
 ---
 
 ### 6. Code Generator
-**Complete Form Example:**
-```
-Language: JavaScript
-Task: Create a function to validate email addresses
-Constraints: No external libraries, must handle edge cases, include inline comments explaining key steps
-```
+**Form Fields with Example Data:**
 
-**Expected Output:** Clean, well-commented JavaScript function with proper email validation, edge case handling, and detailed inline documentation.
+| Field | Example Value |
+|-------|---------------|
+| **Language** | `JavaScript` |
+| **Task** | `Create a function to validate email addresses` |
+| **Constraints** | `No external libraries, must handle edge cases, include inline comments explaining key steps` |
+
+**Complete Prompt Generated:**
+```
+Write JavaScript code that accomplishes the following task: Create a function to validate email addresses. Constraints: No external libraries, must handle edge cases, include inline comments explaining key steps. Include inline comments explaining key steps.
+```
 
 ---
 

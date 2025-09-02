@@ -75,62 +75,149 @@ A modern, AI-powered platform for generating professional customer service respo
 ## 🧪 Example Prompts for Demo
 
 ### 1. Customer Service Bot
+**Complete Form Example:**
 ```
 Business Type: E-commerce
 Industry: Online Retail
-Customer Issue: "My order hasn't arrived after 2 weeks"
 Tone: Professional
+Language: English
+Response Length: Medium
+Specific Scenario: Order delivery issue
+Customer Query: "My order #12345 hasn't arrived after 2 weeks. I need it urgently for an event this weekend. Can you help me track it or arrange expedited shipping?"
+```
+
+**Expected Output:** Professional response addressing the customer's concern, offering tracking assistance, and providing solutions for expedited delivery.
+
+---
+
+### 2. Sales Assistant Bot
+**Complete Form Example:**
+```
+Product: AI-powered CRM platform
+Customer Profile: SMB e-commerce operations manager
+Key Objection: Concerned about migration complexity and hidden costs
+Tone: Friendly
 Language: English
 Response Length: Medium
 ```
 
-### 2. Sales Assistant Bot
-```
-Product: AI-powered CRM platform
-Customer Profile: Small business owner
-Objection: "It's too expensive for my budget"
-Tone: Consultative
-Language: English
-Response Length: Long
-```
+**Expected Output:** Persuasive response addressing migration concerns, highlighting ease of setup, transparent pricing, and offering a free trial or demo.
+
+---
 
 ### 3. Blog Content Writer
+**Complete Form Example:**
 ```
-Topic: "10 Ways to Improve Customer Retention"
-Industry: SaaS
-Target Audience: Business owners
-Tone: Educational
+Topic: "10 Ways to Improve Customer Retention in 2024"
+Audience: SaaS startup founders and marketing managers
+Tone: Professional
 Language: English
-Content Type: Blog post
+Outline: Introduction, 10 actionable strategies with examples, implementation tips, conclusion with next steps
+Length: Medium
 ```
 
+**Expected Output:** Well-structured blog post with engaging introduction, 10 detailed retention strategies, practical examples, and actionable conclusion.
+
+---
+
 ### 4. Email Campaign Generator
+**Complete Form Example:**
 ```
-Campaign Type: Onboarding
-Goal: Welcome new users and guide them through setup
-Audience: New trial users
-Product: Project management tool
+Campaign Type: Promotional
+Goal: Drive sign-ups for free trial
+Audience: Small business owners interested in productivity tools
+Product: AI-powered project management software
 Tone: Friendly
 Language: English
 ```
 
+**Expected Output:** Compelling email with attention-grabbing subject line, engaging body content highlighting benefits, clear call-to-action, and urgency elements.
+
+---
+
 ### 5. Logo Design Generator
+**Complete Form Example:**
 ```
-Brand Name: TechFlow
-Tagline: "Streamline your workflow"
-Core Values: Innovation, efficiency, collaboration
+Brand: TechFlow Solutions
+Tagline: "Streamline Your Workflow"
+Values: Innovation, efficiency, reliability, user-friendly
 Style: Modern
-Color Preferences: Blues and greens
-Primary Usage: Web and mobile apps
+Colors: Blue (#3B82F6) and white with accent orange (#F97316)
+Usage: Web and App
 ```
 
+**Expected Output:** Comprehensive design brief with 3 concept directions, typography suggestions, color palette with hex codes, usage guidelines, and negative space ideas.
+
+---
+
 ### 6. Code Generator
+**Complete Form Example:**
 ```
 Language: JavaScript
 Task: Create a function to validate email addresses
-Constraints: No external libraries, must handle edge cases
-Include: Inline comments explaining key steps
+Constraints: No external libraries, must handle edge cases, include inline comments explaining key steps
 ```
+
+**Expected Output:** Clean, well-commented JavaScript function with proper email validation, edge case handling, and detailed inline documentation.
+
+---
+
+## 🎯 Quick Demo Scenarios
+
+### Scenario 1: E-commerce Support
+**Use Case:** Customer service response for delayed order
+**Generator:** Customer Service Bot
+**Form Fill:**
+- Business Type: E-commerce
+- Industry: Fashion Retail
+- Tone: Empathetic
+- Customer Query: "My wedding dress order is late and my wedding is in 3 days!"
+
+### Scenario 2: SaaS Sales
+**Use Case:** Overcoming pricing objections
+**Generator:** Sales Assistant Bot
+**Form Fill:**
+- Product: Cloud-based accounting software
+- Customer Profile: Restaurant owner
+- Key Objection: "I don't trust cloud security with my financial data"
+- Tone: Consultative
+
+### Scenario 3: Content Marketing
+**Use Case:** SEO blog post creation
+**Generator:** Blog Content Writer
+**Form Fill:**
+- Topic: "Best Practices for Remote Team Management"
+- Audience: HR professionals and team leaders
+- Tone: Educational
+- Outline: Problem statement, 5 key practices, tools recommendations, conclusion
+
+### Scenario 4: Product Launch
+**Use Use:** Email campaign for new feature
+**Generator:** Email Campaign Generator
+**Form Fill:**
+- Campaign Type: Product Announcement
+- Goal: Increase feature adoption
+- Audience: Existing customers
+- Product: New AI-powered analytics dashboard
+
+### Scenario 5: Brand Identity
+**Use Case:** Logo design for startup
+**Generator:** Logo Design Generator
+**Form Fill:**
+- Brand: GreenTech Innovations
+- Tagline: "Sustainable Solutions for Tomorrow"
+- Values: Environmental responsibility, innovation, growth
+- Style: Clean and modern
+
+### Scenario 6: Development Helper
+**Use Case:** Utility function creation
+**Generator:** Code Generator
+**Form Fill:**
+- Language: Python
+- Task: Create a function to format phone numbers
+- Constraints: Handle multiple formats, return standardized format, include error handling
+
+
 
 ## 🌐 Deployment
 

@@ -51,6 +51,55 @@ A modern, AI-powered platform for generating professional customer service respo
 5. **Open your browser**
    Navigate to `http://localhost:3000`
 
+## 🎬 Application Showcase
+
+<div align="center">
+
+### 🍍 Pineapple AI in Action
+
+Experience the power of our AI generators through these interactive demonstrations:
+
+<table>
+<tr>
+<td align="center">
+<img src="public/img/1.gif" alt="Dashboard Overview" width="300"/>
+<br><strong>Dashboard Overview</strong>
+<br><em>Comprehensive project management and analytics</em>
+</td>
+<td align="center">
+<img src="public/img/2.gif" alt="Generator Hub" width="300"/>
+<br><strong>Generator Hub</strong>
+<br><em>Explore our collection of AI-powered tools</em>
+</td>
+<td align="center">
+<img src="public/img/3.gif" alt="Customer Service Bot" width="300"/>
+<br><strong>Customer Service Bot</strong>
+<br><em>Professional support response generation</em>
+</td>
+</tr>
+<tr>
+<td align="center">
+<img src="public/img/4.gif" alt="Sales Assistant Bot" width="300"/>
+<br><strong>Sales Assistant Bot</strong>
+<br><em>Persuasive sales response creation</em>
+</td>
+<td align="center">
+<img src="public/img/5.gif" alt="Blog Content Writer" width="300"/>
+<br><strong>Blog Content Writer</strong>
+<br><em>SEO-optimized content generation</em>
+</td>
+<td align="center">
+<img src="public/img/6.gif" alt="Advanced Features" width="300"/>
+<br><strong>Advanced Features</strong>
+<br><em>Email campaigns, logos, and code generation</em>
+</td>
+</tr>
+</table>
+
+**🎯 Try it live:** [https://pineapple-ai.vercel.app/](https://pineapple-ai.vercel.app/)
+
+</div>
+
 ### Available Scripts
 
 - `npm run dev` - Start development server

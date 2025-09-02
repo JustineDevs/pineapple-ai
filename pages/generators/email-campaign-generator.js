@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
 import { Loader2, RefreshCw, Copy, Download, Share2, ArrowLeft } from 'lucide-react'
+import { generateContent } from '../../src/utils/apiClient'
 
 export default function EmailCampaignGeneratorPage() {
   const [formData, setFormData] = useState({
@@ -11,7 +12,7 @@ export default function EmailCampaignGeneratorPage() {
     tone: 'Friendly',
     language: 'English'
   })
-  const [useLocalLLM, setUseLocalLLM] = useState(false)
+
   const [isGenerating, setIsGenerating] = useState(false)
   const [error, setError] = useState(null)
   const [result, setResult] = useState('')
@@ -21,10 +22,13 @@ export default function EmailCampaignGeneratorPage() {
   const generate = async () => {
     setIsGenerating(true); setError(null); setResult('')
     try {
-      const api = useLocalLLM ? '/api/generate-local' : '/api/generate'
       const prompt = `Write a ${formData.campaignType} email in ${formData.language} with a ${formData.tone} tone. Goal: ${formData.goal}. Audience: ${formData.audience}. Product/Offer: ${formData.product}. Include a compelling subject line and a clear CTA button copy.`
-      const res = await fetch(api, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ prompt, generatorType: 'email-campaign' }) })
-      const data = await res.json(); if (!res.ok) throw new Error(data.error || 'Generation failed'); setResult(data.text)
+      const data = await generateContent(prompt, { generatorType: 'email-campaign' })
+      if (data.success) {
+        setResult(data.text)
+      } else {
+        throw new Error(data.error || 'Generation failed')
+      }
     } catch (e) { setError(e.message) } finally { setIsGenerating(false) }
   }
 

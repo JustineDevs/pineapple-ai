@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
 import { Loader2, RefreshCw, Copy, Download, Share2, ArrowLeft } from 'lucide-react'
+import { generateContent } from '../../src/utils/apiClient'
 
 export default function BlogContentWriterPage() {
   const [formData, setFormData] = useState({
@@ -11,7 +12,7 @@ export default function BlogContentWriterPage() {
     outline: '',
     length: 'Medium'
   })
-  const [useLocalLLM, setUseLocalLLM] = useState(false)
+
   const [isGenerating, setIsGenerating] = useState(false)
   const [error, setError] = useState(null)
   const [result, setResult] = useState('')
@@ -26,16 +27,13 @@ export default function BlogContentWriterPage() {
     setError(null)
     setResult('')
     try {
-      const apiEndpoint = useLocalLLM ? '/api/generate-local' : '/api/generate'
       const prompt = `Write a blog post about "${formData.topic}" for an audience of ${formData.audience || 'general readers'}. Use a ${formData.tone} tone in ${formData.language}. Target length: ${formData.length}. ${formData.outline ? 'Follow this outline: ' + formData.outline : ''}`
-      const res = await fetch(apiEndpoint, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ prompt, generatorType: 'blog-writer' })
-      })
-      const data = await res.json()
-      if (!res.ok) throw new Error(data.error || 'Generation failed')
-      setResult(data.text)
+      const data = await generateContent(prompt, { generatorType: 'blog-writer' })
+      if (data.success) {
+        setResult(data.text)
+      } else {
+        throw new Error(data.error || 'Generation failed')
+      }
     } catch (e) {
       setError(e.message)
     } finally {

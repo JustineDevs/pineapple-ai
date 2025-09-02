@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
 import { Loader2, RefreshCw, Copy, Download, Share2, ArrowLeft } from 'lucide-react'
+import { generateContent } from '../../src/utils/apiClient'
 
 export default function SalesAssistantBotPage() {
   const [formData, setFormData] = useState({
@@ -11,7 +12,7 @@ export default function SalesAssistantBotPage() {
     language: 'English',
     length: 'Medium'
   })
-  const [useLocalLLM, setUseLocalLLM] = useState(false)
+
   const [isGenerating, setIsGenerating] = useState(false)
   const [error, setError] = useState(null)
   const [result, setResult] = useState('')
@@ -26,12 +27,13 @@ export default function SalesAssistantBotPage() {
     setError(null)
     setResult('')
     try {
-      const api = useLocalLLM ? '/api/generate-local' : '/api/generate'
       const prompt = `Act as a SaaS sales assistant. Craft a ${formData.length} response in ${formData.language} using a ${formData.tone} tone. Product: ${formData.product}. Customer profile: ${formData.customerProfile}. Handle objection: ${formData.objection}. Include one probing question and one CTA to schedule a demo.`
-      const res = await fetch(api, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ prompt, generatorType: 'sales-assistant' }) })
-      const data = await res.json()
-      if (!res.ok) throw new Error(data.error || 'Generation failed')
-      setResult(data.text)
+      const data = await generateContent(prompt, { generatorType: 'sales-assistant' })
+      if (data.success) {
+        setResult(data.text)
+      } else {
+        throw new Error(data.error || 'Generation failed')
+      }
     } catch (e) { setError(e.message) } finally { setIsGenerating(false) }
   }
 

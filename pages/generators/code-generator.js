@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
 import { Loader2, RefreshCw, Copy, Download, ArrowLeft } from 'lucide-react'
+import { generateContent } from '../../src/utils/apiClient'
 
 export default function CodeGeneratorPage() {
   const [formData, setFormData] = useState({
@@ -8,7 +9,7 @@ export default function CodeGeneratorPage() {
     task: '',
     constraints: ''
   })
-  const [useLocalLLM, setUseLocalLLM] = useState(false)
+
   const [isGenerating, setIsGenerating] = useState(false)
   const [error, setError] = useState(null)
   const [result, setResult] = useState('')
@@ -23,16 +24,13 @@ export default function CodeGeneratorPage() {
     setError(null); 
     setResult('')
     try {
-      const api = useLocalLLM ? '/api/generate-local' : '/api/generate'
       const prompt = `Write ${formData.language} code that accomplishes the following task: ${formData.task}. ${formData.constraints ? 'Constraints: ' + formData.constraints : ''}. Include inline comments explaining key steps.`
-      const res = await fetch(api, { 
-        method: 'POST', 
-        headers: { 'Content-Type': 'application/json' }, 
-        body: JSON.stringify({ prompt, generatorType: 'code-generator' }) 
-      })
-      const data = await res.json(); 
-      if (!res.ok) throw new Error(data.error || 'Generation failed'); 
-      setResult(data.text)
+      const data = await generateContent(prompt, { generatorType: 'code-generator' })
+      if (data.success) {
+        setResult(data.text)
+      } else {
+        throw new Error(data.error || 'Generation failed')
+      }
     } catch (e) { 
       setError(e.message) 
     } finally { 

@@ -159,10 +159,26 @@ Include: Inline comments explaining key steps
 
 Set these in your Vercel dashboard:
 
-- `OPENAI_API_KEY` - Your OpenAI API key
+**For Static Deployment (Recommended):**
+- `NEXT_PUBLIC_OPENAI_API_KEY` - Your OpenAI API key (client-side)
+- `NEXT_PUBLIC_API_BASE_URL` - API base URL (default: https://api.openai.com/v1)
+
+**For Server-side API (if using server functions):**
+- `OPENAI_API_KEY` - Your OpenAI API key (server-side)
 - `LOCAL_LLM_API_URL` - (Optional) Local LLM endpoint
 - `LOCAL_LLM_API_KEY` - (Optional) Local LLM API key
 - `LOCAL_LLM_MODEL` - (Optional) Local LLM model name
+
+### Static Deployment Benefits
+
+✅ **Fixed Issues:**
+- ✅ Blank/white screen resolved
+- ✅ 404 errors fixed
+- ✅ Proper routing with static export
+- ✅ Client-side API integration
+- ✅ No server-side dependencies
+
+**Note:** The application now uses client-side API calls for AI generation, which works perfectly with static deployment on Vercel.
 
 ## 🧪 Testing & Quality Assurance
 

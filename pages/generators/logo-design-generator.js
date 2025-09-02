@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
 import { Loader2, RefreshCw, Copy, Download, ArrowLeft } from 'lucide-react'
+import { generateContent } from '../../src/utils/apiClient'
 
 export default function LogoDesignGeneratorPage() {
   const [formData, setFormData] = useState({
@@ -11,7 +12,7 @@ export default function LogoDesignGeneratorPage() {
     colors: '',
     usage: 'Web and App'
   })
-  const [useLocalLLM, setUseLocalLLM] = useState(false)
+
   const [isGenerating, setIsGenerating] = useState(false)
   const [error, setError] = useState(null)
   const [result, setResult] = useState('')
@@ -21,10 +22,13 @@ export default function LogoDesignGeneratorPage() {
   const generate = async () => {
     setIsGenerating(true); setError(null); setResult('')
     try {
-      const api = useLocalLLM ? '/api/generate-local' : '/api/generate'
       const prompt = `Create a professional logo design brief. Brand: ${formData.brand}. Tagline: ${formData.tagline}. Core values: ${formData.values}. Preferred style: ${formData.style}. Color preferences: ${formData.colors}. Primary usage: ${formData.usage}. Include: concept directions (3), typography suggestions, color palette (hex), usage notes, and negative space/monogram ideas.`
-      const res = await fetch(api, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ prompt, generatorType: 'logo-design' }) })
-      const data = await res.json(); if (!res.ok) throw new Error(data.error || 'Generation failed'); setResult(data.text)
+      const data = await generateContent(prompt, { generatorType: 'logo-design' })
+      if (data.success) {
+        setResult(data.text)
+      } else {
+        throw new Error(data.error || 'Generation failed')
+      }
     } catch (e) { setError(e.message) } finally { setIsGenerating(false) }
   }
 

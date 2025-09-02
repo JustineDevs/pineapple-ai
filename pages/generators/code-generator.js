@@ -7,6 +7,11 @@ export default function CodeGeneratorPage() {
   const [formData, setFormData] = useState({
     language: 'JavaScript',
     task: '',
+    context: '',
+    exemplar: '',
+    persona: '',
+    format: '',
+    tone: '',
     constraints: ''
   })
 
@@ -24,7 +29,52 @@ export default function CodeGeneratorPage() {
     setError(null); 
     setResult('')
     try {
-      const prompt = `Write ${formData.language} code that accomplishes the following task: ${formData.task}. ${formData.constraints ? 'Constraints: ' + formData.constraints : ''}. Include inline comments explaining key steps.`
+      // Build enhanced prompt using the formula: Task + Context + Exemplar + Persona + Format + Tone
+      let prompt = `# Enhanced Code Generation Request\n\n`
+      
+      // Task [Mandatory]
+      prompt += `## Task [Mandatory]\nWrite ${formData.language} code that accomplishes: ${formData.task}\n\n`
+      
+      // Context [Important]
+      if (formData.context) {
+        prompt += `## Context [Important]\n${formData.context}\n\n`
+      }
+      
+      // Exemplar [Important]
+      if (formData.exemplar) {
+        prompt += `## Exemplar [Important]\n${formData.exemplar}\n\n`
+      }
+      
+      // Persona [Nice-to-haves]
+      if (formData.persona) {
+        prompt += `## Persona [Nice-to-haves]\n${formData.persona}\n\n`
+      }
+      
+      // Format [Nice-to-haves]
+      if (formData.format) {
+        prompt += `## Format [Nice-to-haves]\n${formData.format}\n\n`
+      }
+      
+      // Tone [Nice-to-haves]
+      if (formData.tone) {
+        prompt += `## Tone [Nice-to-haves]\n${formData.tone}\n\n`
+      }
+      
+      // Constraints
+      if (formData.constraints) {
+        prompt += `## Constraints\n${formData.constraints}\n\n`
+      }
+      
+      prompt += `## Output Requirements\n`
+      prompt += `Generate comprehensive code following this structure:\n`
+      prompt += `1. **Analysis & Planning** - Explain the approach and key considerations\n`
+      prompt += `2. **Implementation** - Complete, well-commented code with best practices\n`
+      prompt += `3. **Usage Examples** - Practical examples showing how to use the code\n`
+      prompt += `4. **Best Practices** - Guidelines for maintainability and performance\n`
+      prompt += `5. **Testing** - Unit tests or testing recommendations\n`
+      prompt += `6. **Documentation** - Clear documentation and API reference\n\n`
+      prompt += `Focus on production-ready, maintainable code with proper error handling, accessibility, and performance considerations.`
+      
       const data = await generateContent(prompt, { generatorType: 'code-generator' })
       if (data.success) {
         setResult(data.text)
@@ -67,6 +117,11 @@ export default function CodeGeneratorPage() {
           <div className="bg-white rounded-lg shadow-sm border p-4 sm:p-6 space-y-4">
 
 
+            <div className="mb-4">
+              <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">Code Generator</h2>
+              <p className="text-sm sm:text-base text-gray-600">Generate comprehensive, production-ready code using our enhanced formula.</p>
+            </div>
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">Language</label>
@@ -81,29 +136,104 @@ export default function CodeGeneratorPage() {
                   <option>Python</option>
                   <option>Go</option>
                   <option>Java</option>
+                  <option>React</option>
+                  <option>Vue.js</option>
+                  <option>Node.js</option>
                 </select>
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Constraints (optional)</label>
-                <input 
-                  name="constraints" 
-                  value={formData.constraints} 
+                <label className="block text-sm font-medium text-gray-700 mb-1">Tone (Nice-to-have)</label>
+                <select 
+                  name="tone" 
+                  value={formData.tone} 
                   onChange={handleChange} 
-                  placeholder="e.g., no external libs, O(n)" 
+                  className="input-field"
+                >
+                  <option value="">Select tone...</option>
+                  <option>Professional</option>
+                  <option>Educational</option>
+                  <option>Beginner-friendly</option>
+                  <option>Advanced</option>
+                  <option>Concise</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                Task [Mandatory] <span className="text-red-500">*</span>
+              </label>
+              <textarea 
+                name="task" 
+                value={formData.task} 
+                onChange={handleChange} 
+                rows="3" 
+                className="input-field" 
+                placeholder="e.g., Create a React component for user authentication with form validation" 
+                required
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                Context [Important] <span className="text-orange-500">*</span>
+              </label>
+              <textarea 
+                name="context" 
+                value={formData.context} 
+                onChange={handleChange} 
+                rows="3" 
+                className="input-field" 
+                placeholder="e.g., This is for a SaaS application using Next.js, TypeScript, and Tailwind CSS. The component should integrate with our existing auth system." 
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                Exemplar [Important] <span className="text-orange-500">*</span>
+              </label>
+              <textarea 
+                name="exemplar" 
+                value={formData.exemplar} 
+                onChange={handleChange} 
+                rows="3" 
+                className="input-field" 
+                placeholder="e.g., Follow the pattern from shadcn/ui components with proper TypeScript interfaces, accessibility features, and error handling like the Button component." 
+              />
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Persona (Nice-to-have)</label>
+                <input 
+                  name="persona" 
+                  value={formData.persona} 
+                  onChange={handleChange} 
+                  placeholder="e.g., Senior React Developer, UI/UX Expert" 
+                  className="input-field" 
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Format (Nice-to-have)</label>
+                <input 
+                  name="format" 
+                  value={formData.format} 
+                  onChange={handleChange} 
+                  placeholder="e.g., Component with TypeScript, Storybook stories, Unit tests" 
                   className="input-field" 
                 />
               </div>
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Task Description</label>
+              <label className="block text-sm font-medium text-gray-700 mb-1">Constraints</label>
               <textarea 
-                name="task" 
-                value={formData.task} 
+                name="constraints" 
+                value={formData.constraints} 
                 onChange={handleChange} 
-                rows="4" 
+                rows="2" 
                 className="input-field" 
-                placeholder="e.g., parse CSV and output JSON" 
+                placeholder="e.g., No external libraries, must be accessible (WCAG 2.1), performance optimized, include error boundaries" 
               />
             </div>
             

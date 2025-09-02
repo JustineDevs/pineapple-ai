@@ -52,12 +52,7 @@ export default function LogoDesignGeneratorPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg:py-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
           <div className="bg-white rounded-lg shadow-sm border p-4 sm:p-6 space-y-4">
-            <div className="p-4 bg-gray-50 rounded-lg">
-            <label className="flex items-center gap-2">
-              <input type="checkbox" className="rounded border-gray-300 text-blue-600 focus:ring-blue-500" checked={useLocalLLM} onChange={(e)=>setUseLocalLLM(e.target.checked)} />
-              <span className="text-sm font-medium text-gray-700">Use Local LLM</span>
-            </label>
-          </div>
+
 
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">Brand Name</label>

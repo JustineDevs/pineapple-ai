@@ -69,25 +69,13 @@ const CustomerServiceBot = () => {
     setError(null)
     
     try {
-      const apiEndpoint = useLocalLLM ? '/api/generate-local' : '/api/generate'
-      
-      const response = await fetch(apiEndpoint, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          prompt: 'Generate a professional customer service response',
+      const result = await generateContent(
+        'Generate a professional customer service response',
+        {
           generatorType: 'customer-service',
           ...responseToRegenerate.formData
-        })
-      })
-
-      const result = await response.json()
-
-      if (!response.ok) {
-        throw new Error(result.error || 'Failed to regenerate response')
-      }
+        }
+      )
 
       if (result.success) {
         const newResponse = {
@@ -101,6 +89,8 @@ const CustomerServiceBot = () => {
         setGeneratedResponses(prev => prev.map(r => 
           r.id === responseId ? newResponse : r
         ))
+      } else {
+        throw new Error(result.error || 'Failed to regenerate response')
       }
     } catch (err) {
       setError(err.message)
@@ -178,23 +168,7 @@ const CustomerServiceBot = () => {
               <p className="text-sm sm:text-base text-gray-600">Generate professional customer service responses tailored to your business needs.</p>
             </div>
 
-            {/* LLM Selection */}
-            <div className="mb-6 p-4 bg-gray-50 rounded-lg">
-              <label className="flex items-center space-x-2">
-                <input
-                  type="checkbox"
-                  checked={useLocalLLM}
-                  onChange={(e) => setUseLocalLLM(e.target.checked)}
-                  className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
-                />
-                <span className="text-sm font-medium text-gray-700">
-                  Use Local LLM (GPT-OSS120b) instead of OpenAI API
-                </span>
-              </label>
-              <p className="text-xs text-gray-500 mt-1">
-                {useLocalLLM ? 'Using local model for cost-free generation' : 'Using OpenAI API for high-quality responses'}
-              </p>
-            </div>
+
 
             <form className="space-y-4">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

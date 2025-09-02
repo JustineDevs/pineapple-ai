@@ -89,12 +89,7 @@ export default function BlogContentWriterPage() {
             <p className="text-sm sm:text-base text-gray-600">Generate blog posts with topic, tone, audience, and outline.</p>
           </div>
 
-          <div className="mb-4 p-4 bg-gray-50 rounded-lg">
-            <label className="flex items-center space-x-2">
-              <input type="checkbox" className="rounded border-gray-300 text-blue-600 focus:ring-blue-500" checked={useLocalLLM} onChange={(e) => setUseLocalLLM(e.target.checked)} />
-              <span className="text-sm font-medium text-gray-700">Use Local LLM</span>
-            </label>
-          </div>
+
 
           <div className="space-y-4">
             <div>

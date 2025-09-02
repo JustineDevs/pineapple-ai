@@ -62,12 +62,7 @@ export default function SalesAssistantBotPage() {
             <p className="text-sm sm:text-base text-gray-600">Generate persuasive, value-driven sales replies.</p>
           </div>
 
-          <div className="p-4 bg-gray-50 rounded-lg">
-            <label className="flex items-center gap-2">
-              <input type="checkbox" className="rounded border-gray-300 text-blue-600 focus:ring-blue-500" checked={useLocalLLM} onChange={(e)=>setUseLocalLLM(e.target.checked)} />
-              <span className="text-sm font-medium text-gray-700">Use Local LLM</span>
-            </label>
-          </div>
+
 
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">Product</label>

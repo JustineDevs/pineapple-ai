@@ -183,13 +183,50 @@ Create a professional logo design brief. Brand: TechFlow Solutions. Tagline: "St
 
 | Field | Example Value |
 |-------|---------------|
-| **Language** | `JavaScript` |
-| **Task** | `Create a function to validate email addresses` |
-| **Constraints** | `No external libraries, must handle edge cases, include inline comments explaining key steps` |
+| **Language** | `React` |
+| **Task [Mandatory]** | `Create a reusable toggle switch component with accessibility features` |
+| **Context [Important]** | `This is for a SaaS dashboard using Next.js, TypeScript, and Tailwind CSS. The component should integrate with our design system and support theming.` |
+| **Exemplar [Important]** | `Follow the pattern from shadcn/ui components with proper TypeScript interfaces, ARIA attributes, keyboard navigation, and error handling like the Button component.` |
+| **Persona (Nice-to-have)** | `Senior React Developer with expertise in accessibility and design systems` |
+| **Format (Nice-to-have)** | `Component with TypeScript interfaces, Storybook stories, Unit tests, and comprehensive documentation` |
+| **Tone (Nice-to-have)** | `Professional` |
+| **Constraints** | `Must be accessible (WCAG 2.1), support controlled/uncontrolled modes, include error boundaries, and be performance optimized` |
 
 **Complete Prompt Generated:**
 ```
-Write JavaScript code that accomplishes the following task: Create a function to validate email addresses. Constraints: No external libraries, must handle edge cases, include inline comments explaining key steps. Include inline comments explaining key steps.
+# Enhanced Code Generation Request
+
+## Task [Mandatory]
+Write React code that accomplishes: Create a reusable toggle switch component with accessibility features
+
+## Context [Important]
+This is for a SaaS dashboard using Next.js, TypeScript, and Tailwind CSS. The component should integrate with our design system and support theming.
+
+## Exemplar [Important]
+Follow the pattern from shadcn/ui components with proper TypeScript interfaces, ARIA attributes, keyboard navigation, and error handling like the Button component.
+
+## Persona [Nice-to-haves]
+Senior React Developer with expertise in accessibility and design systems
+
+## Format [Nice-to-haves]
+Component with TypeScript interfaces, Storybook stories, Unit tests, and comprehensive documentation
+
+## Tone [Nice-to-haves]
+Professional
+
+## Constraints
+Must be accessible (WCAG 2.1), support controlled/uncontrolled modes, include error boundaries, and be performance optimized
+
+## Output Requirements
+Generate comprehensive code following this structure:
+1. **Analysis & Planning** - Explain the approach and key considerations
+2. **Implementation** - Complete, well-commented code with best practices
+3. **Usage Examples** - Practical examples showing how to use the code
+4. **Best Practices** - Guidelines for maintainability and performance
+5. **Testing** - Unit tests or testing recommendations
+6. **Documentation** - Clear documentation and API reference
+
+Focus on production-ready, maintainable code with proper error handling, accessibility, and performance considerations.
 ```
 
 ---

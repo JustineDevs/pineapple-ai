@@ -28,7 +28,7 @@ A modern, AI-powered platform for generating professional customer service respo
 
 1. **Clone the repository**
    ```bash
-   git clone <your-repo-url>
+   git clone https://github.com/JustineDevs/pineapple-ai
    cd pineapple-ai
    ```
 

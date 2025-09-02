@@ -149,9 +149,9 @@ const Documents = () => {
       case 'PDF':
         return <FileText className="w-8 h-8 text-red-500" />;
       case 'Figma':
-        return <Image className="w-8 h-8 text-purple-500" />;
+        return <Image className="w-8 h-8 text-purple-500" alt="Figma file" />;
       case 'PNG':
-        return <Image className="w-8 h-8 text-green-500" />;
+        return <Image className="w-8 h-8 text-green-500" alt="PNG file" />;
       case 'DOCX':
         return <FileText className="w-8 h-8 text-blue-500" />;
       case 'XLSX':

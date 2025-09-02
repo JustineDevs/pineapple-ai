@@ -20,9 +20,9 @@ Allow: /resources/
 Crawl-delay: 1
 
 # Sitemap location
-Sitemap: https://aigeneratorhub.com/sitemap.xml
+Sitemap: https://pineapple-ai.vercel.app/sitemap.xml
 
 # Additional sitemaps for better organization
-Sitemap: https://aigeneratorhub.com/sitemap-generators.xml
-Sitemap: https://aigeneratorhub.com/sitemap-categories.xml
-Sitemap: https://aigeneratorhub.com/sitemap-industries.xml
+Sitemap: https://pineapple-ai.vercel.app/sitemap-generators.xml
+Sitemap: https://pineapple-ai.vercel.app/sitemap-categories.xml
+Sitemap: https://pineapple-ai.vercel.app/sitemap-industries.xml

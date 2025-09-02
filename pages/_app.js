@@ -2,6 +2,8 @@ import '../src/index.css'
 import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
 import Sidebar from '../src/components/Sidebar'
+import ErrorBoundary from '../src/components/ErrorBoundary'
+import { ToastProvider } from '../src/contexts/ToastContext'
 import { Analytics } from '@vercel/analytics/react'
 
 function MyApp({ Component, pageProps }) {
@@ -24,36 +26,42 @@ function MyApp({ Component, pageProps }) {
   }
 
   return (
-    <div className="flex h-screen bg-gray-50">
-      {/* Mobile menu button */}
-      <div className="lg:hidden fixed top-4 left-4 z-50">
-        <button
-          onClick={() => setSidebarOpen(!sidebarOpen)}
-          className="bg-white p-2 rounded-lg shadow-md border border-gray-200 hover:bg-gray-50"
-        >
-          {sidebarOpen ? (
-            <X className="h-6 w-6 text-gray-600" />
-          ) : (
-            <Menu className="h-6 w-6 text-gray-600" />
+    <ErrorBoundary>
+      <ToastProvider>
+        <div className="flex h-screen bg-gray-50">
+          {/* Mobile menu button */}
+          <div className="lg:hidden fixed top-4 left-4 z-50">
+            <button
+              onClick={() => setSidebarOpen(!sidebarOpen)}
+              className="bg-white p-2 rounded-lg shadow-md border border-gray-200 hover:bg-gray-50"
+              aria-label={sidebarOpen ? "Close menu" : "Open menu"}
+            >
+              {sidebarOpen ? (
+                <X className="h-6 w-6 text-gray-600" />
+              ) : (
+                <Menu className="h-6 w-6 text-gray-600" />
+              )}
+            </button>
+          </div>
+
+          {/* Mobile overlay */}
+          {sidebarOpen && (
+            <div 
+              className="lg:hidden fixed inset-0 z-40 bg-black bg-opacity-50"
+              onClick={() => setSidebarOpen(false)}
+              aria-hidden="true"
+            />
           )}
-        </button>
-      </div>
 
-      {/* Mobile overlay */}
-      {sidebarOpen && (
-        <div 
-          className="lg:hidden fixed inset-0 z-40 bg-black bg-opacity-50"
-          onClick={() => setSidebarOpen(false)}
-        />
-      )}
-
-      <Sidebar isOpen={sidebarOpen} setIsOpen={setSidebarOpen} />
-      <main className="flex-1 overflow-auto lg:ml-0">
-        <div className="lg:hidden h-16"></div> {/* Spacer for mobile menu button */}
-        <Component {...pageProps} />
-      </main>
-      <Analytics />
-    </div>
+          <Sidebar isOpen={sidebarOpen} setIsOpen={setSidebarOpen} />
+          <main className="flex-1 overflow-auto lg:ml-0" role="main">
+            <div className="lg:hidden h-16"></div> {/* Spacer for mobile menu button */}
+            <Component {...pageProps} />
+          </main>
+          <Analytics />
+        </div>
+      </ToastProvider>
+    </ErrorBoundary>
   )
 }
 

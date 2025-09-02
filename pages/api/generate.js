@@ -6,9 +6,22 @@ const openai = new OpenAI({
 })
 
 export default async function handler(req, res) {
+  // Set CORS headers
+  res.setHeader('Access-Control-Allow-Origin', '*')
+  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS')
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization')
+
+  if (req.method === 'OPTIONS') {
+    return res.status(200).end()
+  }
+
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' })
   }
+
+  // Rate limiting (basic implementation)
+  const rateLimitKey = req.headers['x-forwarded-for'] || req.connection.remoteAddress
+  // In production, implement proper rate limiting with Redis or similar
 
   try {
     const { 
@@ -22,6 +35,26 @@ export default async function handler(req, res) {
       customerQuery,
       generatorType 
     } = req.body
+
+    // Input validation
+    if (!prompt || typeof prompt !== 'string' || prompt.trim().length === 0) {
+      return res.status(400).json({ error: 'Prompt is required and must be a non-empty string' })
+    }
+
+    if (prompt.length > 2000) {
+      return res.status(400).json({ error: 'Prompt is too long. Maximum 2000 characters allowed.' })
+    }
+
+    // Validate generator type
+    const validGeneratorTypes = ['customer-service', 'sales-assistant', 'blog-writer', 'email-campaign', 'logo-design', 'code-generator']
+    if (generatorType && !validGeneratorTypes.includes(generatorType)) {
+      return res.status(400).json({ error: 'Invalid generator type' })
+    }
+
+    // Check API key
+    if (!process.env.OPENAI_API_KEY) {
+      return res.status(500).json({ error: 'OpenAI API key not configured' })
+    }
 
     // Build the complete prompt for the AI based on generator type
     let fullPrompt = ''
@@ -96,43 +129,61 @@ export default async function handler(req, res) {
     
     fullPrompt += `\n\n${prompt}`
 
-    // Call OpenAI API
-    const completion = await openai.chat.completions.create({
-      model: "gpt-4o-mini", // Using the more affordable model
-      messages: [
-        {
-          role: "system",
-          content: systemPrompt
-        },
-        {
-          role: "user",
-          content: fullPrompt
-        }
-      ],
-      max_tokens: 800,
-      temperature: 0.7,
-    })
+    // Call OpenAI API with timeout
+    const controller = new AbortController()
+    const timeoutId = setTimeout(() => controller.abort(), 30000) // 30 second timeout
 
-    let generatedText = completion.choices[0].message.content
+    try {
+      const completion = await openai.chat.completions.create({
+        model: "gpt-4o-mini", // Using the more affordable model
+        messages: [
+          {
+            role: "system",
+            content: systemPrompt
+          },
+          {
+            role: "user",
+            content: fullPrompt
+          }
+        ],
+        max_tokens: 800,
+        temperature: 0.7,
+        timeout: 30000, // 30 second timeout
+      })
 
-    // Clean up any remaining markdown formatting
-    generatedText = generatedText
-      .replace(/\*\*(.*?)\*\*/g, '$1') // Remove bold markdown
-      .replace(/\*(.*?)\*/g, '$1') // Remove italic markdown
-      .replace(/`(.*?)`/g, '$1') // Remove code markdown
-      .replace(/^#+\s*/gm, '') // Remove heading markdown
-      .replace(/\[(.*?)\]\(.*?\)/g, '$1') // Remove link markdown
-      .replace(/^\s*[-*+]\s*/gm, '• ') // Convert list markers to bullets
-      .replace(/^\s*\d+\.\s*/gm, '') // Remove numbered list markers
-      .trim()
+      clearTimeout(timeoutId)
 
-    // Return the generated response
-    res.status(200).json({ 
-      success: true,
-      text: generatedText,
-      usage: completion.usage,
-      model: completion.model
-    })
+      let generatedText = completion.choices[0].message.content
+
+      // Clean up any remaining markdown formatting
+      generatedText = generatedText
+        .replace(/\*\*(.*?)\*\*/g, '$1') // Remove bold markdown
+        .replace(/\*(.*?)\*/g, '$1') // Remove italic markdown
+        .replace(/`(.*?)`/g, '$1') // Remove code markdown
+        .replace(/^#+\s*/gm, '') // Remove heading markdown
+        .replace(/\[(.*?)\]\(.*?\)/g, '$1') // Remove link markdown
+        .replace(/^\s*[-*+]\s*/gm, '• ') // Convert list markers to bullets
+        .replace(/^\s*\d+\.\s*/gm, '') // Remove numbered list markers
+        .trim()
+
+      // Return the generated response
+      res.status(200).json({ 
+        success: true,
+        text: generatedText,
+        usage: completion.usage,
+        model: completion.model
+      })
+
+    } catch (apiError) {
+      clearTimeout(timeoutId)
+      if (apiError.name === 'AbortError') {
+        return res.status(408).json({ 
+          error: 'Request timeout. Please try again.',
+          code: 'TIMEOUT'
+        })
+      }
+      throw apiError
+    }
 
   } catch (error) {
     console.error('AI Generation Error:', error)

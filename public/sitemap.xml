@@ -2,42 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- Main Pages -->
   <url>
-    <loc>https://aigeneratorhub.com/</loc>
+    <loc>https://pineapple-ai.vercel.app/</loc>
     <lastmod>2024-02-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   
   <url>
-    <loc>https://aigeneratorhub.com/projects</loc>
+    <loc>https://pineapple-ai.vercel.app/projects</loc>
     <lastmod>2024-02-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://aigeneratorhub.com/tasks</loc>
+    <loc>https://pineapple-ai.vercel.app/tasks</loc>
     <lastmod>2024-02-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://aigeneratorhub.com/team</loc>
+    <loc>https://pineapple-ai.vercel.app/team</loc>
     <lastmod>2024-02-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://aigeneratorhub.com/documents</loc>
+    <loc>https://pineapple-ai.vercel.app/documents</loc>
     <lastmod>2024-02-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://aigeneratorhub.com/settings</loc>
+    <loc>https://pineapple-ai.vercel.app/settings</loc>
     <lastmod>2024-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -45,7 +45,7 @@
 
   <!-- Generator Hub - Main Entry Point -->
   <url>
-    <loc>https://aigeneratorhub.com/generator-hub</loc>
+    <loc>https://pineapple-ai.vercel.app/generator-hub</loc>
     <lastmod>2024-02-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
@@ -55,56 +55,56 @@
   
   <!-- Chatbot Generators -->
   <url>
-    <loc>https://aigeneratorhub.com/generators/customer-service-bot</loc>
+    <loc>https://pineapple-ai.vercel.app/generators/customer-service-bot</loc>
     <lastmod>2024-02-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://aigeneratorhub.com/generators/sales-assistant</loc>
+    <loc>https://pineapple-ai.vercel.app/generators/sales-assistant</loc>
     <lastmod>2024-02-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://aigeneratorhub.com/generators/lead-qualification-bot</loc>
+    <loc>https://pineapple-ai.vercel.app/generators/lead-qualification-bot</loc>
     <lastmod>2024-02-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://aigeneratorhub.com/generators/support-chatbot</loc>
+    <loc>https://pineapple-ai.vercel.app/generators/support-chatbot</loc>
     <lastmod>2024-02-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://aigeneratorhub.com/generators/faq-bot</loc>
+    <loc>https://pineapple-ai.vercel.app/generators/faq-bot</loc>
     <lastmod>2024-02-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://aigeneratorhub.com/generators/appointment-scheduler</loc>
+    <loc>https://pineapple-ai.vercel.app/generators/appointment-scheduler</loc>
     <lastmod>2024-02-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://aigeneratorhub.com/generators/order-tracking-bot</loc>
+    <loc>https://pineapple-ai.vercel.app/generators/order-tracking-bot</loc>
     <lastmod>2024-02-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://aigeneratorhub.com/generators/feedback-collector</loc>
+    <loc>https://pineapple-ai.vercel.app/generators/feedback-collector</loc>
     <lastmod>2024-02-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -112,42 +112,42 @@
 
   <!-- Content Writing Generators -->
   <url>
-    <loc>https://aigeneratorhub.com/generators/blog-writer</loc>
+    <loc>https://pineapple-ai.vercel.app/generators/blog-writer</loc>
     <lastmod>2024-02-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://aigeneratorhub.com/generators/email-campaigns</loc>
+    <loc>https://pineapple-ai.vercel.app/generators/email-campaigns</loc>
     <lastmod>2024-02-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://aigeneratorhub.com/generators/product-descriptions</loc>
+    <loc>https://pineapple-ai.vercel.app/generators/product-descriptions</loc>
     <lastmod>2024-02-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://aigeneratorhub.com/generators/social-media-posts</loc>
+    <loc>https://pineapple-ai.vercel.app/generators/social-media-posts</loc>
     <lastmod>2024-02-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://aigeneratorhub.com/generators/landing-page-copy</loc>
+    <loc>https://pineapple-ai.vercel.app/generators/landing-page-copy</loc>
     <lastmod>2024-02-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://aigeneratorhub.com/generators/press-releases</loc>
+    <loc>https://pineapple-ai.vercel.app/generators/press-releases</loc>
     <lastmod>2024-02-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -155,35 +155,35 @@
 
   <!-- Visual & Design Generators -->
   <url>
-    <loc>https://aigeneratorhub.com/generators/logo-designer</loc>
+    <loc>https://pineapple-ai.vercel.app/generators/logo-designer</loc>
     <lastmod>2024-02-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://aigeneratorhub.com/generators/color-palette-generator</loc>
+    <loc>https://pineapple-ai.vercel.app/generators/color-palette-generator</loc>
     <lastmod>2024-02-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://aigeneratorhub.com/generators/typography-combinations</loc>
+    <loc>https://pineapple-ai.vercel.app/generators/typography-combinations</loc>
     <lastmod>2024-02-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://aigeneratorhub.com/generators/brand-guidelines</loc>
+    <loc>https://pineapple-ai.vercel.app/generators/brand-guidelines</loc>
     <lastmod>2024-02-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://aigeneratorhub.com/generators/ui-mockups</loc>
+    <loc>https://pineapple-ai.vercel.app/generators/ui-mockups</loc>
     <lastmod>2024-02-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -191,35 +191,35 @@
 
   <!-- Technical Generators -->
   <url>
-    <loc>https://aigeneratorhub.com/generators/code-generator</loc>
+    <loc>https://pineapple-ai.vercel.app/generators/code-generator</loc>
     <lastmod>2024-02-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://aigeneratorhub.com/generators/api-documentation</loc>
+    <loc>https://pineapple-ai.vercel.app/generators/api-documentation</loc>
     <lastmod>2024-02-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://aigeneratorhub.com/generators/database-schemas</loc>
+    <loc>https://pineapple-ai.vercel.app/generators/database-schemas</loc>
     <lastmod>2024-02-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://aigeneratorhub.com/generators/test-cases</loc>
+    <loc>https://pineapple-ai.vercel.app/generators/test-cases</loc>
     <lastmod>2024-02-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://aigeneratorhub.com/generators/technical-specs</loc>
+    <loc>https://pineapple-ai.vercel.app/generators/technical-specs</loc>
     <lastmod>2024-02-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -227,28 +227,28 @@
 
   <!-- Category Hub Pages -->
   <url>
-    <loc>https://aigeneratorhub.com/category/chatbots</loc>
+    <loc>https://pineapple-ai.vercel.app/category/chatbots</loc>
     <lastmod>2024-02-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>https://aigeneratorhub.com/category/content-writing</loc>
+    <loc>https://pineapple-ai.vercel.app/category/content-writing</loc>
     <lastmod>2024-02-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>https://aigeneratorhub.com/category/visual-design</loc>
+    <loc>https://pineapple-ai.vercel.app/category/visual-design</loc>
     <lastmod>2024-02-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>https://aigeneratorhub.com/category/technical</loc>
+    <loc>https://pineapple-ai.vercel.app/category/technical</loc>
     <lastmod>2024-02-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -256,35 +256,35 @@
 
   <!-- Industry-Specific Pages -->
   <url>
-    <loc>https://aigeneratorhub.com/industry/ecommerce</loc>
+    <loc>https://pineapple-ai.vercel.app/industry/ecommerce</loc>
     <lastmod>2024-02-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>https://aigeneratorhub.com/industry/saas</loc>
+    <loc>https://pineapple-ai.vercel.app/industry/saas</loc>
     <lastmod>2024-02-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>https://aigeneratorhub.com/industry/healthcare</loc>
+    <loc>https://pineapple-ai.vercel.app/industry/healthcare</loc>
     <lastmod>2024-02-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>https://aigeneratorhub.com/industry/finance</loc>
+    <loc>https://pineapple-ai.vercel.app/industry/finance</loc>
     <lastmod>2024-02-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>https://aigeneratorhub.com/industry/education</loc>
+    <loc>https://pineapple-ai.vercel.app/industry/education</loc>
     <lastmod>2024-02-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -292,28 +292,28 @@
 
   <!-- Use Case Pages -->
   <url>
-    <loc>https://aigeneratorhub.com/use-cases/customer-support</loc>
+    <loc>https://pineapple-ai.vercel.app/use-cases/customer-support</loc>
     <lastmod>2024-02-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://aigeneratorhub.com/use-cases/marketing</loc>
+    <loc>https://pineapple-ai.vercel.app/use-cases/marketing</loc>
     <lastmod>2024-02-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://aigeneratorhub.com/use-cases/sales</loc>
+    <loc>https://pineapple-ai.vercel.app/use-cases/sales</loc>
     <lastmod>2024-02-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://aigeneratorhub.com/use-cases/development</loc>
+    <loc>https://pineapple-ai.vercel.app/use-cases/development</loc>
     <lastmod>2024-02-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -321,28 +321,28 @@
 
   <!-- Resource Pages -->
   <url>
-    <loc>https://aigeneratorhub.com/resources/ai-trends</loc>
+    <loc>https://pineapple-ai.vercel.app/resources/ai-trends</loc>
     <lastmod>2024-02-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://aigeneratorhub.com/resources/best-practices</loc>
+    <loc>https://pineapple-ai.vercel.app/resources/best-practices</loc>
     <lastmod>2024-02-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://aigeneratorhub.com/resources/tutorials</loc>
+    <loc>https://pineapple-ai.vercel.app/resources/tutorials</loc>
     <lastmod>2024-02-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://aigeneratorhub.com/resources/case-studies</loc>
+    <loc>https://pineapple-ai.vercel.app/resources/case-studies</loc>
     <lastmod>2024-02-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -350,28 +350,28 @@
 
   <!-- Legal Pages -->
   <url>
-    <loc>https://aigeneratorhub.com/privacy-policy</loc>
+    <loc>https://pineapple-ai.vercel.app/privacy-policy</loc>
     <lastmod>2024-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
   
   <url>
-    <loc>https://aigeneratorhub.com/terms-of-service</loc>
+    <loc>https://pineapple-ai.vercel.app/terms-of-service</loc>
     <lastmod>2024-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
   
   <url>
-    <loc>https://aigeneratorhub.com/contact</loc>
+    <loc>https://pineapple-ai.vercel.app/contact</loc>
     <lastmod>2024-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://aigeneratorhub.com/about</loc>
+    <loc>https://pineapple-ai.vercel.app/about</loc>
     <lastmod>2024-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>

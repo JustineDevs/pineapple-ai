@@ -51,6 +51,16 @@ A modern, AI-powered platform for generating professional customer service respo
 5. **Open your browser**
    Navigate to `http://localhost:3000`
 
+### Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run start` - Start production server
+- `npm run lint` - Run ESLint
+- `npm run lint:fix` - Fix ESLint issues
+- `npm run clean` - Clean build artifacts
+- `npm run preview` - Build and preview production
+
 ## 🎯 Core Features
 
 | Feature | Description | Status |
@@ -138,7 +148,7 @@ Include: Inline comments explaining key steps
    - Set environment variables in Vercel dashboard
    - Deploy automatically on every push
 
-## 🧪 Testing
+## 🧪 Testing & Quality Assurance
 
 ### Development Testing
 
@@ -146,12 +156,27 @@ Include: Inline comments explaining key steps
 # Run linting
 npm run lint
 
+# Fix linting issues
+npm run lint:fix
+
 # Build for production
 npm run build
 
 # Start production server
 npm start
+
+# Clean build artifacts
+npm run clean
 ```
+
+### Code Quality Features
+
+- **ESLint Configuration**: Comprehensive linting rules for React, Next.js, and accessibility
+- **Error Boundaries**: Graceful error handling with user-friendly error pages
+- **Type Safety**: TypeScript support for better development experience
+- **Performance Optimizations**: Image optimization, code splitting, and caching
+- **Security Headers**: XSS protection, content type validation, and frame options
+- **Accessibility**: ARIA labels, semantic HTML, and keyboard navigation support
 
 ### API Testing
 
